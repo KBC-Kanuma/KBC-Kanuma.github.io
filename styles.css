@@ -1,1 +1,144 @@
+* {
+	margin: 0;
+	padding: 0;
+}
 
+header {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	position: fixed;
+	display: flex;
+	background-image: url(h_b_w.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+body {
+	background-image: url(back.jpg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.header_top {
+	display: inline-block;
+	margin: auto auto auto 0;
+}
+
+.header_top_contents {
+	display: inline-block;
+}
+
+.nav-list {
+	text-align: center;
+	padding: 10px 0;
+	margin: 0 0 0 auto;
+}
+
+.nav-list-item {
+	list-style: none;
+	display: inline-block;
+	margin: 0 20px;
+	font-size: 19px;
+}
+
+.nav-list-item:hover {
+	list-style: none;
+	display: inline-block;
+	margin: 0 20px;
+	font-size: 19px;
+	font-weight: bold;
+	text-shadow: rgba(10, 189, 240, 0.5) 3px 3px 0px, rgba(254, 1, 1, 0.5) -3px -3px 0px;
+}
+
+.zen-dots-regular {
+	font-family: "Zen Dots", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.dotgothic16-regular {
+	font-family: "DotGothic16", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+
+
+@media screen and (min-width: 800px) {
+	footer {
+		background-color: #555555;
+		padding: 20px;
+		color: #ffffff;
+		text-align: center;
+		font-size: 16px;
+	}
+
+	.nav-list-item {
+		list-style: none;
+		display: inline-block;
+		margin: 0 20px;
+		font-size: 20px;
+	}
+
+	.nav-list-item:hover {
+		list-style: none;
+		display: inline-block;
+		margin: 0 20px;
+		font-size: 20px;
+		font-weight: bold;
+		text-shadow: rgba(10, 189, 240, 0.5) 3px 3px 0px, rgba(254, 1, 1, 0.5) -3px -3px 0px;
+	}
+
+	.logo_header_1 {
+		font-size: 30px;
+	}
+
+	.logo_header_2 {
+		font-size: 20px;
+	}
+
+}
+
+@media screen and (max-width: 800px) {
+	footer {
+		background-color: #555555;
+		padding: 20px;
+		color: #ffffff;
+		text-align: center;
+		font-size: 2vw;
+	}
+
+	.nav-list-item {
+		list-style: none;
+		display: inline-block;
+		margin: 0 20px;
+		font-size: 2.5vw;
+	}
+
+	.nav-list-item:hover {
+		list-style: none;
+		display: inline-block;
+		margin: 0 20px;
+		font-size: 2.5vw;
+		font-weight: bold;
+		text-shadow: rgba(10, 189, 240, 0.5) 3px 3px 0px, rgba(254, 1, 1, 0.5) -3px -3px 0px;
+	}
+
+
+	.logo_header_1 {
+		font-size: 3.75vw;
+	}
+
+	.logo_header_2 {
+		font-size: 2.5vw0:42 2024/11/23;
+	}
+
+}
+
+a {
+	color:inherit;
+	text-decoration:none;
+}
