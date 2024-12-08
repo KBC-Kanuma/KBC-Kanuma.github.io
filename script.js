@@ -103,8 +103,10 @@ function change_pages(m_) {
 		if (type == "home" || type == "adv" || type == "works" || type == "manual" || type == "issues" || type == "files" || type == "base") {
 			if (!window[`${type}_data`]) {
 				async function run_strict() {
+					console.log(`${type}=load_pages("${type}")`);
 					await eval(`${type}=load_pages("${type}")`);
-					let data = window[`${type}_data`];
+					let data = window[`${type}_data`].html;
+					console.log(data);
 					show_pages(data);
 				}
 				run_strict();
