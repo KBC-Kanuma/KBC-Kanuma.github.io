@@ -16,10 +16,6 @@ header {
 	color: #000000 !important;
 }
 
-body {
-
-}
-
 .animation_1 {
 	display: flex;
 	justify-content: center;
@@ -134,17 +130,17 @@ body {
 
 
 .biz-udmincho-regular {
-  font-family: "BIZ UDMincho", serif;
-  font-weight: 400;
-  font-style: normal;
+	font-family: "BIZ UDMincho", serif;
+	font-weight: 400;
+	font-style: normal;
 }
 
 
 .m-plus-1-code {
-  font-family: "M PLUS 1 Code", monospace;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
+	font-family: "M PLUS 1 Code", monospace;
+	font-optical-sizing: auto;
+	font-weight: 100;
+	font-style: normal;
 }
 
 
@@ -231,6 +227,7 @@ a {
 .footer {
 	z-index: 2;
 	position: relative;
+	background-color:var(--theme);
 }
 
 .header {
@@ -245,6 +242,7 @@ a {
 	height: 60vw;
 	margin: auto;
 }
+
 .box-bottom {
 	position: absolute;
 	box-sizing: border-box;
@@ -276,23 +274,24 @@ a {
 }
 
 .marquee_1 {
-  display: inline-block;
-  padding-left: 100%;
-  white-space: nowrap;
-  animation: marquee_1 20s linear infinite;
-  overflow: hidden;
+	display: inline-block;
+	padding-left: 100%;
+	white-space: nowrap;
+	animation: marquee_1 20s linear infinite;
+	overflow: hidden;
 }
 
 @keyframes marquee_1 {
-  from {
-    transform: translate(0);
-  }
-  to {
-    transform: translate(-100%);
-  }
+	from {
+		transform: translate(0);
+	}
+
+	to {
+		transform: translate(-100%);
+	}
 }
 
-.notice{
+.notice {
 	background-color: var(--theme_b);
 	color: var(--theme_r);
 	text-align: center;
@@ -311,6 +310,270 @@ a {
 	min-height: 100vh;
 }
 
-.infomations {
-	
+
+.loading-container {
+	position: relative;
+	width: 200px;
+	height: 200px;
+}
+
+.shape1 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+	background-color: var(--theme_r);
+	transform-origin: center;
+	animation: morph1 4s infinite;
+}
+
+.shape2 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+	background-color: var(--theme_r);
+	transform-origin: center;
+	animation: morph2 4s infinite;
+}
+
+.shape3 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+	background-color: var(--theme_r);
+	transform-origin: center;
+	animation: morph3 4s infinite;
+}
+
+.shape4 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+	background-color: var(--theme_r);
+	transform-origin: center;
+	animation: morph4 4s infinite;
+}
+
+.shape5 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+	background-color: var(--theme);
+	transform-origin: center;
+	animation: morph5 4s infinite;
+	z-index: 99;
+}
+
+.shape6 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+	background-color: var(--theme);
+	transform-origin: center;
+	animation: morph6 4s infinite;
+	z-index: 99;
+}
+
+.shape7 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+	background-color: var(--theme);
+	transform-origin: center;
+	animation: morph7 4s infinite;
+	z-index: 99;
+}
+
+.shape8 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	clip-path: polygon(50% 0, 100% 100%, 0 100%);
+	background-color: var(--theme);
+	transform-origin: center;
+	animation: morph8 4s infinite;
+	z-index: 99;
+}
+
+
+@keyframes morph1 {
+	0% {
+		clip-path: polygon(0 0, 100% 0, 0 50%);
+	}
+
+	25% {
+		clip-path: polygon(0 0, 80% 40%, 80% 0);
+	}
+
+	50% {
+		clip-path: polygon(0 0, 100% 0, 100% 50%);
+	}
+
+	75% {
+		clip-path: polygon(100% 50%, 100% 0, 0 0);
+	}
+
+	100% {
+		clip-path: polygon(0 0, 100% 0, 0 50%);
+	}
+}
+
+@keyframes morph2 {
+	0% {
+		clip-path: polygon(0 50%, 100% 0, 100% 100%);
+	}
+
+	25% {
+		clip-path: polygon(0 40%, 80% 40%, 0 0);
+	}
+
+	50% {
+		clip-path: polygon(100% 50%, 0 50%, 0 0);
+	}
+
+	75% {
+		clip-path: polygon(0 0, 100% 50%, 0 50%);
+	}
+
+	100% {
+		clip-path: polygon(0 50%, 100% 0, 100% 100%);
+	}
+}
+
+@keyframes morph3 {
+	0% {
+		clip-path: polygon(0 50%, 100% 100%, 0 100%);
+	}
+
+	25% {
+		clip-path: polygon(0 40%, 100% 40%, 100% 100%);
+	}
+
+	50% {
+		clip-path: polygon(0 50%, 100% 100%, 0 100%);
+	}
+
+	75% {
+		clip-path: polygon(100% 50%, 100% 100%, 0 100%);
+	}
+
+	100% {
+		clip-path: polygon(0 50%, 100% 100%, 0 100%);
+	}
+}
+
+@keyframes morph4 {
+	0% {
+		clip-path: polygon(0 50%, 100% 100%, 0 100%);
+	}
+
+	25% {
+		clip-path: polygon(0 40%, 0 100%, 100% 100%);
+	}
+
+	50% {
+		clip-path: polygon(0 50%, 100% 50%, 100% 99%);
+	}
+
+	75% {
+		clip-path: polygon(0 50%, 0 100%, 100% 50%);
+	}
+
+	100% {
+		clip-path: polygon(0 50%, 100% 100%, 0 100%);
+	}
+}
+
+@keyframes morph5 {
+	0% {
+		clip-path: polygon(1% 1%, 99% 1%, 1% 49%);
+	}
+
+	25% {
+		clip-path: polygon(1% 1%, 79% 39%, 79% 1%);
+	}
+
+	50% {
+		clip-path: polygon(1% 1%, 100% 1%, 100% 50%);
+	}
+
+	75% {
+		clip-path: polygon(99% 48%, 99% 1%, 2% 1%);
+	}
+
+	100% {
+		clip-path: polygon(1% 1%, 99% 1%, 1% 49%);
+	}
+}
+
+@keyframes morph6 {
+	0% {
+		clip-path: polygon(2% 50%, 99% 2%, 99% 98%);
+	}
+
+	25% {
+		clip-path: polygon(1% 39%, 79% 39%, 1% 1%);
+	}
+
+	50% {
+		clip-path: polygon(100% 50%, 1% 50%, 1% 1%);
+	}
+
+	75% {
+		clip-path: polygon(1% 1%, 99% 49%, 1% 49%);
+	}
+
+	100% {
+		clip-path: polygon(2% 50%, 99% 2%, 99% 98%);
+	}
+}
+
+@keyframes morph7 {
+	0% {
+		clip-path: polygon(1% 51%, 99% 99%, 1% 99%);
+	}
+
+	25% {
+		clip-path: polygon(1% 41%, 99% 41%, 99% 99%);
+	}
+
+	50% {
+		clip-path: polygon(1% 50%, 100% 99%, 1% 99%);
+	}
+
+	75% {
+		clip-path: polygon(99% 52%, 99% 99%, 2% 99%);
+	}
+
+	100% {
+		clip-path: polygon(1% 51%, 99% 99%, 1% 99%);
+	}
+}
+
+@keyframes morph8 {
+	0% {
+		clip-path: polygon(1% 51%, 99% 99%, 1% 99%);
+	}
+
+	25% {
+		clip-path: polygon(1% 41%, 1% 99%, 99% 99%);
+	}
+
+	50% {
+		clip-path: polygon(1% 50%, 100% 50%, 100% 99%);
+	}
+
+	75% {
+		clip-path: polygon(1% 51%, 1% 99%, 99% 51%);
+	}
+
+	100% {
+		clip-path: polygon(1% 51%, 99% 99%, 1% 99%);
+	}
 }

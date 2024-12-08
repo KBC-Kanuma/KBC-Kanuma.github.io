@@ -5,10 +5,13 @@
 	<link rel="stylesheet" href="styles.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Hina+Mincho&family=Yuji+Boku&family=Yusei+Magic&family=Zen+Dots&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Hina+Mincho&family=Yuji+Boku&family=Yusei+Magic&family=Zen+Dots&display=swap"
+		rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=BIZ+UDMincho&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=BIZ+UDMincho&family=M+PLUS+1+Code:wght@100..700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=BIZ+UDMincho&family=M+PLUS+1+Code:wght@100..700&display=swap"
+		rel="stylesheet">
 	<link rel="icon" href="favicon.png">
 	<meta name="description" content="鹿沼高校放送部の公式(になる予定)の部員作成のサイトです。現在準備中。">
 	<meta name="viewport" content="initial-scare=2.3">
@@ -16,18 +19,20 @@
 
 <body>
 	<script id="load">
-	window.onload = function() {
-	        let body=document.body;
-	        const script_run = document.createElement('script');
-	        script_run.src="script.js";
-	        body.appendChild(script_run);
-	        const load_script = document.querySelector('#load');
-	        body.removeChild(load_script);
-	      }
+		window.onload = function () {
+			let body = document.body;
+			const script_run = document.createElement('script');
+			script_run.src = "script.js";
+			body.appendChild(script_run);
+			const load_script = document.querySelector('#load');
+			body.removeChild(load_script);
+		}
 	</script>
 
 
+	<div class="loading">
 
+	</div>
 
 	<header class="header">
 		<div class="header_top">
@@ -36,58 +41,24 @@
 				<p class="dotgothic16-regular logo_header_2 header_top_contents">鹿沼高校放送部</p>
 			</a>
 		</div>
-		<ul class="nav-list zen-dots-regular">
-			<li class="nav-list-item">
-				<a href="https://kbc-kanuma.github.io">Home</a>
-			</li>
-			<li class="nav-list-item">
-				<a href="https://kbc-kanuma.github.io/about">About</a>
-			</li>
-			<li class="nav-list-item">
-				<a href="https://kbc-kanuma.github.io/planet">Planet</a>
-			</li>
-		</ul>
+		<div class="header_pc">
+			<ul class="nav-list zen-dots-regular">
+				<li class="nav-list-item">
+					<a href="https://kbc-kanuma.github.io">Home</a>
+				</li>
+				<li class="nav-list-item">
+					<a href="https://kbc-kanuma.github.io/about">About</a>
+				</li>
+				<li class="nav-list-item">
+					<a href="https://kbc-kanuma.github.io/planet">Planet</a>
+				</li>
+			</ul>
+		</div>
+		<div class="header_ph" style="display:none;">
+			<img></img>
+		</div>
 	</header>
-	<div class="animation_1">
-		<div class="content">
-			<div class="box-bottom"></div>
-			<div class="box-top"></div>
-		</div>
-	</div>
-	<div class="main_contents">
-		<div class="m_block notice biz-udmincho-regular">
-			<h1>Notices</h1>
-			<div class="notices biz-udmincho-regular">あいうえお</div>
-		</div>
-		<div class="m_block links">
-			<h1 class="biz-udmincho-regular" style="text-align: center;font-size:3vw;">Links</h1>
-			<a href="https://kbc-kanuma.github.io/about">
-				<div>
-					<marquee scrollamount="4"><h1 class="biz-udmincho-regular" style="font-size:4vw">About</h1><br><p class="biz-udmincho-regular" style="font-size:2vw">鹿沼高校放送部とは？</p></marquee>
-				</div>
-			</a>
-			<hr>
-			<a href="https://kbc-kanuma.github.io/planet">
-				<div>
-					<marquee scrollamount="3"><h1 class="biz-udmincho-regular" style="font-size:4vw">Planet</h1><br><p class="biz-udmincho-regular" style="font-size:2vw">部員専用情報共有サービス。</p></marquee>
-				</div>
-			</a>
-			<hr>
-			<a href="">
-				<div>
-					<marquee scrollamount="2"><h1 class="biz-udmincho-regular" style="font-size:4vw">Recruite</h1><br><p class="biz-udmincho-regular" style="font-size:2vw">部員募集の詳細。</p></marquee>
-				</div>
-			</a>
-			<hr>
-			<a href="https://www.tochigi-edu.ed.jp/kanuma/">
-				<div>
-					<marquee scrollamount="4"><h1 class="biz-udmincho-regular" style="font-size:4vw">KanumaHighSchool</h1><br><p class="biz-udmincho-regular" style="font-size:2vw">鹿沼高校のサイト。外部リンク。</p></marquee>
-				</div>
-			</a>
-		</div>
-		<div class="m_block m-plus-1-code infomations">
-			<center><h1>Infomations</h1></center>
-		</div>
+	<div id="main">
 	</div>
 	<footer class="footer zen-dots-regular">
 		<p>© 2024 KanumaHighSchool Broadcasting Club. All rights reserved.</p>
