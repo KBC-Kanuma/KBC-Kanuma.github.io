@@ -59,7 +59,6 @@ function branch() {
 		url_pram("w", "m", "home");
 		mode = "home";
 	}
-	change_pages(mode);
 
 }
 
@@ -88,7 +87,7 @@ function url_pram(t, i, f) {
 
 }
 // ページチェンジ
-function change_pages(m_) {
+function change_pages(m_, f) {
 	function show_pages(data) {
 		const old_box = document.querySelector("#main");
 		const new_box = document.createElement("div");
@@ -130,13 +129,19 @@ function change_pages(m_) {
 			}
 		}
 	}
-
-	// ローディング画面を表示
-	show_pages_('loading');
-	//本命
-	setTimeout(function () {
+	if (f == true) {
+		// ローディング画面を表示
+		show_pages_('loading');
+		//本命
+		setTimeout(function () {
+			show_pages_(m_);
+		}, 3000);
+	} else {
+		// ローディング画面を表示
+		show_pages_('loading');
 		show_pages_(m_);
-	}, 2000);
+	}
+
 }
 
 // ページデータをロード
@@ -162,6 +167,7 @@ async function loadAndExecute() {
 	await load_jquery();
 	definitions();
 	branch();
+	change_pages(mode, true);
 }
 
 
