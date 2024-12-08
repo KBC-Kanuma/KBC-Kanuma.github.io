@@ -227,7 +227,7 @@ a {
 .footer {
 	z-index: 2;
 	position: relative;
-	background-color:var(--theme);
+	background-color: var(--theme);
 }
 
 .header {
@@ -312,9 +312,15 @@ a {
 
 
 .loading-container {
+	background-color: var(--theme);
 	position: relative;
 	width: 200px;
 	height: 200px;
+}
+
+.loading-pages {
+	margin: auto auto;
+	background-color: var(--theme);
 }
 
 .shape1 {

@@ -59,6 +59,7 @@ function branch() {
 		url_pram("w", "m", "home");
 		mode = "home";
 	}
+	change_pages(mode);
 
 }
 
@@ -86,9 +87,7 @@ function url_pram(t, i, f) {
 	}
 
 }
-
-//ページチェンジ
-
+// ページチェンジ
 function change_pages(m_) {
 	function show_pages(data) {
 		const old_box = document.querySelector("#main");
@@ -96,43 +95,61 @@ function change_pages(m_) {
 		new_box.innerHTML = data;
 		new_box.id = "main";
 		old_box.replaceWith(new_box);
-		return
 	}
-	show_pages('<div class="loading-container"><div class="shape1"></div><div class="shape2"></div><div class="shape3"></div><div class="shape4"></div><div class="shape5"></div><div class="shape6"></div><div class="shape7"></div><div class="shape8"></div></div>');
+
+
+	// ページの内容を切り替え
 	function show_pages_(type) {
-		if (type == "home" || type == "adv" || type == "works" || type == "manual" || type == "issues" || type == "files" || type == "base") {
-			if (!window[`${type}_data`]) {
-				async function run_strict() {
-					console.log(`${type}=load_pages("${type}")`);
-					await eval(`${type}=load_pages("${type}")`);
-					let data = window[`${type}_data`].html;
-					console.log(data);
-					show_pages(data);
-				}
-				run_strict();
-			} else {
-				let data = window[`${type}_data`];
-				show_pages(data);
-			}
+		const validTypes = ["home", "adv", "works", "manual", "issues", "files", "base", "loading"];
+		if (!validTypes.includes(type)) {
+			console.error(`Invalid page type: ${type}`);
+			return false;
+		}
+
+		// 既にデータがある場合はそのまま表示
+		if (window[`${type}_data`]) {
+			const data = window[`${type}_data`][0]["html"];
+			console.log(`Using cached data for: ${type}`);
+			show_pages(data);
 		} else {
-			return false
+			// データを非同期でロード
+			if (type == "loading") {
+				show_pages('<div class="loading-pages"><div class="loading-container"><div class="shape1"></div><div class="shape2"></div><div class="shape3"></div><div class="shape4"></div><div class="shape5"></div><div class="shape6"></div><div class="shape7"></div><div class="shape8"></div></div></div>');
+
+			} else {
+				load_pages(type)
+					.then((data) => {
+						const html = data[0]["html"];
+						window[`${type}_data`] = data; // キャッシュに保存
+						console.log(`Loaded data for: ${type}`);
+						show_pages(html);
+					})
+					.catch((err) => {
+						console.error(`Failed to load data for: ${type}`, err);
+					});
+			}
 		}
 	}
-	show_pages_(m_);
+
+	// ローディング画面を表示
+	show_pages_('loading');
+	//本命
+	setTimeout(function () {
+		show_pages_(m_);
+	}, 2000);
 }
 
-
-//読み込み
-
+// ページデータをロード
 function load_pages(type) {
-		fetch(`./${type}.json`)
-			.then((data) => data.json())
-			.then((obj) => {
-				let code = obj;
-				return code
-			});
-
-
+	return fetch(`./${type}.json`)
+		.then((response) => {
+			if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+			return response.json();
+		})
+		.then((obj) => {
+			console.log("Loaded object:", obj);
+			return obj;
+		});
 }
 
 
