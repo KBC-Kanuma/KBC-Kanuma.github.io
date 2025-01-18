@@ -153,6 +153,13 @@ header {
 	font-style: normal;
 }
 
+.montserrat-underline {
+	font-family: "Montserrat Underline", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 100;
+	font-style: normal;
+}
+
 
 @media screen and (min-width: 800px) {
 	footer {
@@ -188,6 +195,40 @@ header {
 		font-size: 20px;
 	}
 
+
+	.tabs {
+		width: 800px;
+		height: 7vh;
+		margin-right: auto !important;
+		margin-left: 0 !important;
+	}
+
+
+	.noti {
+		height: 10vh;
+		font-size:10vh;
+	}
+
+
+	.tab {
+		width: 266.6px !important;
+		height: 7vh;
+		display: inline-block;
+		clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+		background-color: #00000044;
+		text-align:left !important;
+		font-size: 24px;
+	}
+
+	.tab:hover {
+		width: 266.6px !important;
+		height: 7vh;
+		display: inline-block;
+		clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+		background-color: #000000aa;
+		text-align:left !important;
+		font-size: 24px;
+	}
 }
 
 @media screen and (max-width: 800px) {
@@ -225,6 +266,56 @@ header {
 		font-size: 2.5vw;
 	}
 
+	.tabs {
+		display: inline-block;
+		width: 100%;
+		height: 7vh;
+		
+	text-align:left !important;
+	}
+
+	.noti {
+		height: 10vh;
+		font-size:10vh;
+	}
+
+	.tab {
+		display: inline-block;
+		width: calc(100%/3) !important;
+		height: 7vh;
+		clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+		background-color: #00000044;
+		text-align:left !important;
+		font-size: 3vw;
+	}
+
+	.tab:hover {
+		display: inline-block;
+		width: calc(100%/3) !important;
+		height: 7vh;
+		clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+		background-color: #000000aa;
+		text-align:left !important;
+		font-size: 3vw;
+	}
+
+}
+
+.blocks {
+	width: 100%;
+	height: 80vh;
+}
+
+.n_block {
+	display: block;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ff000033;
+}
+
+.d_hidden {
+	display: none;
 }
 
 a {

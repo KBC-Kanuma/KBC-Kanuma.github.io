@@ -30,8 +30,15 @@ function definitions() {
 	mode = url_pram("r", "m");
 	mode_serond = url_pram("r", "s");
 	id = url_pram("r", "i");
-
+	int_c = 0;
+	gas_url = "";
 }
+
+
+
+
+
+
 
 
 /*!
@@ -59,14 +66,62 @@ function branch() {
 		url_pram("w", "m", "home");
 		mode = "home";
 	}
-
 }
-
 
 /*!
  * --その他関数--
  * (others)
  */
+
+function not_tab(int_b) {
+	console.log("not_tab_int_b: " + int_b);
+	console.log("not_tab_int_c: " + int_c);
+	if (int_b == 0 || int_b == 1 || int_b == 2 || int_b == 3) {
+		console.log("not_tab_int_v_1");
+		if (int_b == 1 && !(int_c == int_b)) {
+			console.log("not_tab_int_i_1");
+			document.querySelector("#not_block_1").classList.remove("d_hidden");
+			document.querySelector("#not_block_2").classList.add("d_hidden");
+			document.querySelector("#not_block_3").classList.add("d_hidden");
+
+			document.querySelector("#not_tab_1").classList.add("t_active");
+			document.querySelector("#not_tab_2").classList.remove("t_active");
+			document.querySelector("#not_tab_3").classList.remove("t_active");
+			int_c = 1;
+		}
+		if (int_b == 2 && !(int_c == int_b)) {
+			console.log("not_tab_int_i_2");
+			document.querySelector("#not_block_1").classList.add("d_hidden");
+			document.querySelector("#not_block_2").classList.remove("d_hidden");
+			document.querySelector("#not_block_3").classList.add("d_hidden");
+
+			document.querySelector("#not_tab_1").classList.remove("t_active");
+			document.querySelector("#not_tab_2").classList.add("t_active");
+			document.querySelector("#not_tab_3").classList.remove("t_active");
+			int_c = 2;
+		}
+		if (int_b == 3 && !(int_c == int_b)) {
+			console.log("not_tab_int_i_3");
+			document.querySelector("#not_block_1").classList.add("d_hidden");
+			document.querySelector("#not_block_2").classList.add("d_hidden");
+			document.querySelector("#not_block_3").classList.remove("d_hidden");
+
+			document.querySelector("#not_tab_1").classList.remove("t_active");
+			document.querySelector("#not_tab_2").classList.remove("t_active");
+			document.querySelector("#not_tab_3").classList.add("t_active");
+			int_c = 3;
+		}
+		if (int_b == 0) {
+			console.log("not_tab_int_i_0");
+			document.querySelector("#not_block_2").classList.add("d_hidden");
+			document.querySelector("#not_block_3").classList.add("d_hidden");
+			document.querySelector("#not_tab_1").classList.add("t_active");
+			int_c = 1;
+		}
+	}
+}
+
+
 
 //URLパラメーター変更
 
@@ -135,13 +190,19 @@ function change_pages(m_, f) {
 		//本命
 		setTimeout(function () {
 			show_pages_(m_);
+
 		}, 3000);
+
 	} else {
 		// ローディング画面を表示
 		show_pages_('loading');
 		show_pages_(m_);
 	}
 
+}
+//お知らせの内容変更
+
+function show_not(){
 }
 
 // ページデータをロード
@@ -157,6 +218,26 @@ function load_pages(type) {
 		});
 }
 
+function run() {
+	function load_gas(pram) {
+		return fetch(gas_url + pram)
+			.then((response) => {
+				if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+				return response.json();
+			})
+			.then((obj) => {
+				console.log("Loaded object:", obj);
+				return obj;
+			});
+	}
+	//m...mode s...second_mode i...id
+
+	load_gas(`?m=${mode}&s=${mode_serond}&id=${id}`);
+	mode;
+	mode_serond;
+	id;
+}
+
 
 /*!
  * --asynkコーナー--
@@ -165,9 +246,10 @@ function load_pages(type) {
 
 async function loadAndExecute() {
 	await load_jquery();
-	definitions();
-	branch();
-	change_pages(mode, true);
+	await definitions();
+	await branch();
+	await change_pages(mode, true);
+	await run();
 }
 
 
