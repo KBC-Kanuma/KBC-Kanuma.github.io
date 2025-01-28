@@ -1,5 +1,5 @@
 [
     {
-        "html": '<div class="animation_1"><div class="content"><div class="box-bottom" style="font-size:15vw">準備中</div><div class="box-top" style="font-size:15vw">準備中</div></div></div>'
+        "html": "<div class='animation_1'><div class='content'><div class='box-bottom' style='font-size:15vw'>準備中</div><div class='box-top' style='font-size:15vw'>準備中</div></div></div>'
     }
 ]
